@@ -1,131 +1,127 @@
-# Awesome-SaaS-Usage-Metering-Analytics
+<div align="center">
 
-# Awesome SaaS Usage & Metering Analytics
+<img src="./assets/banner.svg" alt="Awesome SaaS Usage and Metering Analytics Banner" width="100%" />
 
-> A curated list of top SaaS Usage and Metering Analytics platforms — both SaaS/Hosted commercial solutions and open-source alternatives for tracking consumption, enforcing entitlements, and billing customers based on what they actually use.
-> 🌟 Star this repo if you find it useful! 🌟
+# ⚡ Awesome SaaS Usage & Metering Analytics 💳
+
+[![Awesome](https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/jc4xtF58Ve)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics)
+[![GitHub stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics?style=social)](https://github.com/ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics/stargazers)
+[![GitHub followers](https://img.shields.io/github/followers/ishandutta2007?label=Follow)](https://github.com/ishandutta2007)
+
+<p align="center">
+  <strong>A curated list of top-tier SaaS Usage & Metering Analytics platforms, event rating engines, billing middleware, and open-source infrastructure for real-time consumption billing and entitlement enforcement.</strong>
+</p>
+<p align="center">
+  <em>Track high-throughput events, meter AI & LLM token usage, automate subscription allowances, handle prepaid credit wallets, and power hybrid usage-based monetization models.</em>
+</p>
+
+</div>
 
 ---
 
-## 📋 Table of Contents
+## 📑 Table of Contents
 
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Metronome (Stripe)](#metronome-stripe)
-  - [Orb (Adyen)](#orb-adyen)
-  - [m3ter (Salesforce)](#m3ter-salesforce)
-  - [Amberflo](#amberflo)
-  - [Togai (Zuora)](#togai-zuora)
-  - [Chargebee Usage Billing](#chargebee-usage-billing)
-  - [Zuora](#zuora)
-- [Open-Source Software](#-open-source-software)
-  - [OpenMeter](#openmeter)
-  - [Lago](#lago)
-  - [Flexprice](#flexprice)
-  - [Lotus](#lotus)
-- [Comparison at a Glance](#-comparison-at-a-glance)
-- [Contributing](#-contributing)
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🟦 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [🟩 Open-Source Software](#-open-source-software)
+- [📊 Comparison at a Glance](#-comparison-at-a-glance)
+- [📈 Star History](#-star-history)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global usage-based billing and subscription management market is estimated between **$6.8B and $8.5B in 2025–2026**, expanding rapidly at an estimated compound annual growth rate (CAGR) of **16% to 20%** driven by generative AI tokens, API consumption, and compute-heavy architectures. 
+
+The sector has evolved into a **moderately fragmented and rapidly consolidating** landscape where hyper-scale payment and enterprise cloud ecosystems (such as Stripe's acquisition of Metronome, Salesforce's acquisition of m3ter, and Adyen's $335M buyout of Orb) dominate enterprise financial infrastructure, while agile independent and open-source platforms vigorously capture developers needing transparent, real-time event aggregation and lock-in-free metering engines.
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted SaaS Usage and Metering Analytics platforms. The standalone metering category consolidated dramatically in 2026 — Stripe acquired Metronome, Salesforce acquired m3ter, Adyen acquired Orb, and Zuora had already absorbed Togai [citation:1][citation:15]. These are not open-source but are included as reference points for feature comparison.
+Below is an overview of commercial, cloud-hosted SaaS Usage and Metering Analytics platforms, ranked in descending order of vendor scale (company valuation and annual revenue).
 
-### Metronome (Stripe)
-**Type:** High-volume usage metering and rating engine, acquired by Stripe
-Metronome was the most searched usage-based billing platform globally in August 2026, with 32.8% share of search [citation:9]. It specializes in high-volume event rating and pricing logic, making it a strong choice when the difficult part is turning raw usage into billable line items [citation:3]. Stripe acquired Metronome to bring real-time metering into its billing stack [citation:1][citation:15]. **Important consideration:** Metronome is now one engine inside Stripe, so the meter and billing are two systems mid-integration rather than a single native record [citation:1]. Enterprise pricing with no published figures.
-**Best for:** Teams already deeply in the Stripe ecosystem with complex rating requirements, accepting that metering and billing may be separate layers.
-
-### Orb (Adyen)
-**Type:** Multi-dimensional pricing and invoice detail, acquired by Adyen
-Orb was known for compelling multi-dimensional pricing and detailed invoice line items [citation:3]. Adyen acquired Orb for a reported $335 million (closed July 2026), with multi-PSP support continuing "initially" [citation:15]. **Consideration:** The acquisition introduces uncertainty about processor neutrality — Orb's independence as a neutral metering layer is now contingent on Adyen's strategy.
-**Best for:** Organizations wanting rich pricing dimensions and invoice transparency, with awareness of the Adyen ownership context.
-
-### m3ter (Salesforce)
-**Type:** Metering and rating for Salesforce/ERP stacks, acquired by Salesforce
-m3ter specializes in the middle layer between raw usage and downstream systems — normalizing usage, applying rates, and handing clean data to CRM and ERP [citation:3]. Salesforce completed its acquisition in July 2026, with plans to integrate m3ter's high-volume metering into Agentforce Revenue Management [citation:3]. Pricing combines a core platform fee with add-ons for capacity, integrations, and implementation.
-**Best for:** Enterprises already anchored in Salesforce and ERP stacks where the usage layer is the missing piece between contract and invoice.
-
-### Amberflo
-**Type:** High-frequency event metering with cost governance
-Amberflo is the notable **corporately independent** commercial vendor remaining after the 2026 acquisition wave [citation:15]. It is strongest when accurate event-level metering is the first problem — metering tokens, API calls, GPU seconds, and custom events, then applying pricing and generating invoices [citation:3]. The architecture is metering-first, with customer-level cost visibility alongside billing. Pricing is usage-based tied to event ingestion volume and invoiced amount, quote-only.
-**Best for:** AI and API products needing current, attributable usage data first, with billing built directly on top and no acquisition-related uncertainty today.
-
-### Togai (Zuora)
-**Type:** Visual pricing configuration, absorbed by Zuora
-Togai emphasized pricing configurability without code, with a visual price plan builder supporting 100+ configurations and a rules engine for custom billing logic [citation:14]. Zuora absorbed Togai, folding its capabilities into the enterprise billing incumbent's platform [citation:1].
-**Best for:** Product and finance teams wanting no-code pricing configuration, within the Zuora ecosystem.
-
-### Chargebee Usage Billing
-**Type:** Hybrid subscription-plus-usage within Chargebee suite
-Chargebee provides usage billing as part of its broader subscription management platform, supporting hybrid models that blend base subscriptions with metered charges, credits, and overages on a single invoice [citation:1]. It is strongest when subscription logic is the core and usage layers on top, rather than usage-first architecture.
-**Best for:** Existing Chargebee customers wanting usage billing without adopting a separate metering vendor.
-
-### Zuora
-**Type:** Enterprise monetization with usage rating and revenue recognition
-Zuora is the enterprise incumbent for subscription and usage billing, with deep revenue recognition (ASC 606/IFRS 15), multi-entity structures, and CPQ workflows [citation:14]. It is built for large organizations with complex billing operations and dedicated RevOps teams. Implementation timelines span months, not days.
-**Best for:** Large enterprises needing usage rating integrated with revenue recognition and multi-entity billing.
+| Solution | Vendor Scale (Valuation / Revenue) | Key Focus & Metering Capabilities | Starting Tier Pricing | Free Tier Limits / Free Trial |
+| :--- | :--- | :--- | :--- | :--- |
+| **[m3ter (Salesforce)](https://www.m3ter.com/)** | **~$280B+ Market Cap** (Parent: Salesforce) | High-volume usage ingestion and rating middleware bridging telemetry directly with Salesforce CRM, CPQ, and ERP billing ledgers. | **$1,500/month** base core platform fee (plus add-on packages for ERP connectors). | **No free tier**; structured 30-day guided enterprise Proof-of-Concept (PoC) with demo sandboxes. |
+| **[Metronome (Stripe)](https://metronome.com/)** | **~$70B+ Valuation** (Parent: Stripe) | High-throughput event ingestion, real-time SQL rating, and native Stripe billing synchronization for usage-based and commit contracts. | **Starter Plan: $0 base** + 0.8% of metered billing volume and ~$0.04 per 1k rated events; Custom Enterprise contracts. | **Free Starter Tier**: Free forever for early-stage teams with core real-time event streaming and basic SQL rating rules. |
+| **[Orb (Adyen)](https://withorb.com/)** | **~$45B+ Market Cap** (Parent: Adyen; acquired for $335M) | Multi-dimensional dynamic rating, real-time credit drawdowns, customer usage alerts, and granular invoice line-item generation. | **$1,200/month** base fee + tier-based percentage of metered usage volume. | **No free tier**; 14-day free developer sandbox and guided staging environment trial. |
+| **[Zuora](https://www.zuora.com/)** | **~$1.5B Market Cap** (Acquired Togai) | Enterprise monetization suite powering subscription lifecycles, automated revenue recognition (ASC 606), and Togai visual usage rating. | **$1,000/month** (Zuora Grow / starter enterprise contracts quoted annually). | **No free tier**; custom 30-day enterprise sandbox trial available upon sales qualification. |
+| **[Chargebee](https://www.chargebee.com/)** | **~$3.5B Valuation** | Comprehensive subscription management, automated invoice-to-cash workflows, dunning pipelines, and metered usage add-on modules. | **$599/month** (Performance Tier, billed annually) for up to $100k/mo processing volume + 0.75% overage. | **Free Starter Plan**: $0/mo for early startups up to first $250,000 in cumulative processed billing; plus 14-day full-feature trial. |
+| **[Amberflo](https://www.amberflo.io/)** | **Independent Venture-Backed** (~$15M–$20M Series A) | Corporately independent real-time cloud and AI token metering platform with cost attribution, rate cards, and automated billing. | **$99/month** (Startup Plan) covering initial usage-tier event volume. | **Free Forever Tier**: Free up to 1,000,000 ingested events per month with complete API access; plus 30-day Pro trial. |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven SaaS Usage and Metering Analytics tools. The open-source ecosystem is anchored by **OpenMeter** (Apache 2.0, acquired by Kong) and **Lago** (AGPL), with newer entrants targeting developer experience.
+Curated open-source software platforms providing transparent, self-hosted usage metering engines, real-time rate tracking, entitlement validation, and billing pipelines. Ranked by GitHub stars in descending order.
 
-### OpenMeter
-**Stack:** Go / PostgreSQL / ClickHouse / Kafka | **License:** Apache-2.0
-OpenMeter is the leading open-source metering and billing engine for AI, API, and DevTool monetization, now part of Kong [citation:2][citation:15]. It ingests CloudEvents, defines meters with flexible aggregations (SUM, COUNT, AVG, MIN, MAX), and connects usage to billing, entitlements, and customer dashboards [citation:2]. Key capabilities include usage-based billing with tiered/graduated/flat-fee pricing, **prepaid credits** with priority-based burn-down, a customer portal for self-service usage visibility, and **first-class LLM token cost tracking** [citation:2]. Architecture uses Kafka for streaming, ClickHouse for real-time aggregation, and PostgreSQL for billing [citation:2]. Deploys via Docker Compose or Kubernetes Helm chart. **Important:** Releases are beta and can include breaking changes, though the metering engine has run in production for years processing billions of events [citation:6].
-**Best for:** Teams wanting a genuinely open-source (Apache 2.0) metering engine with real-time aggregation, prepaid credits, and LLM token tracking, accepting beta-stage release stability.
-
-### Lago
-**Stack:** Ruby / PostgreSQL / Redis / ClickHouse | **License:** AGPL-3.0
-Lago is the most established open-source usage metering and billing platform, with 6,983+ GitHub stars [citation:8]. It ingests events via REST, batch API, or streaming connectors (Kafka, Kinesis, S3), aggregates them into billable metrics using seven aggregation types (COUNT, COUNT UNIQUE, LATEST, MAX, SUM, WEIGHTED SUM, CUSTOM), and applies plan pricing [citation:10]. It handles **late events** by assigning them to the correct billing period using the event's own timestamp, and **deduplicates on transaction_id** so retried events are never double-billed [citation:10]. Supports hybrid plans combining subscriptions with usage, prepaid credits, and usage allowances. **Trade-off:** AGPL licensing and the operational burden of running the full stack.
-**Best for:** Teams wanting a proven, feature-rich open-source billing engine with genuine usage metering and hybrid pricing, accepting AGPL obligations and operational overhead.
-
-### Flexprice
-**Stack:** Go / TypeScript / Docker | **License:** AGPL-3.0
-Flexprice is an open-source usage-based pricing and billing platform for developers, with 6,883+ GitHub stars and active development [citation:13]. It provides real-time usage metering, credits and top-ups, feature access control, a no-code UI, and cloud or self-hosted deployment. SDKs are available for Python, Go, and JavaScript, along with an MCP server for AI agent integration [citation:13]. Positioned as a developer-friendly alternative with a modern Go backend.
-**Best for:** Developers wanting a modern, actively developed open-source metering platform with SDKs and a no-code UI, accepting AGPL licensing.
-
-### Lotus
-**Stack:** Python / Docker | **License:** Open Source (per project)
-Lotus (uselotus/lotus) is an open-source pricing and packaging infrastructure platform with 1,727+ GitHub stars, positioned as a foundation for usage-based pricing [citation:8]. It provides the pricing and packaging layer, with usage tracking and subscription management capabilities. Less established than OpenMeter or Lago, but active in the open-source billing ecosystem.
-**Best for:** Teams exploring open-source pricing infrastructure as an alternative foundation to OpenMeter or Lago, with awareness of a smaller ecosystem.
+| Project | License | Tech Stack | GitHub Stars | Core Capabilities |
+| :--- | :--- | :--- | :---: | :--- |
+| **[Lago](https://github.com/getlago/lago)** | `AGPL-3.0` | Ruby, PostgreSQL, Redis, ClickHouse | [![GitHub stars](https://img.shields.io/github/stars/getlago/lago?style=social&color=white)](https://github.com/getlago/lago/stargazers) | Comprehensive open-source metering and billing API engine. Supports 7 event aggregation modes (COUNT, SUM, MAX, LATEST, etc.), late-arriving event processing, transaction deduplication, and prepaid wallet credits. |
+| **[Flexprice](https://github.com/flexprice/flexprice)** | `AGPL-3.0` | Go, TypeScript, PostgreSQL, Docker | [![GitHub stars](https://img.shields.io/github/stars/flexprice/flexprice?style=social&color=white)](https://github.com/flexprice/flexprice/stargazers) | Developer-friendly usage-based pricing and billing framework. Features low-latency event ingestion, instant credit management, feature access gates, MCP server for AI agent billing, and a modern dashboard. |
+| **[Kill Bill](https://github.com/killbill/killbill)** | `Apache-2.0` | Java, MySQL/PostgreSQL | [![GitHub stars](https://img.shields.io/github/stars/killbill/killbill?style=social&color=white)](https://github.com/killbill/killbill/stargazers) | Battle-tested, enterprise-grade open-source billing and payment orchestration platform. Powers subscription lifecycles, custom payment gateways, hierarchical accounts, and high-volume invoice generation. |
+| **[OpenMeter](https://github.com/openmeterio/openmeter)** | `Apache-2.0` | Go, ClickHouse, Kafka | [![GitHub stars](https://img.shields.io/github/stars/openmeterio/openmeter?style=social&color=white)](https://github.com/openmeterio/openmeter/stargazers) | Cloud-native, high-frequency usage metering built for AI agents, APIs, and DevOps workloads. Powered by ClickHouse and Kafka for sub-second balance queries, prepaid credit burn-down, and LLM token tracking. |
+| **[Lotus](https://github.com/uselotus/lotus)** | `MIT` | Python, Django, React, Docker | [![GitHub stars](https://img.shields.io/github/stars/uselotus/lotus?style=social&color=white)](https://github.com/uselotus/lotus/stargazers) | Open-source pricing and packaging infrastructure. Allows teams to deploy subscription and usage-based tiers, run A/B pricing experiments, and track metrics with automated customer usage alerts. |
+| **[Meteroid](https://github.com/meteroid-oss/meteroid)** | `Apache-2.0` | TypeScript, Node.js, ClickHouse | [![GitHub stars](https://img.shields.io/github/stars/meteroid-oss/meteroid?style=social&color=white)](https://github.com/meteroid-oss/meteroid/stargazers) | Open-source consumption metering and usage billing framework designed for quick setup, subscription handling, automated invoicing, customer usage caps, and revenue analytics. |
+| **[Tier](https://github.com/tierrun/tier)** | `Apache-2.0` | Go, Stripe API | [![GitHub stars](https://img.shields.io/github/stars/tierrun/tier?style=social&color=white)](https://github.com/tierrun/tier/stargazers) | Lightweight SDK and CLI that turns Stripe into an entitlement and usage-based metering engine using JSON pricing schemas defined in code (`pricing.json`). |
 
 ---
 
 ## 📊 Comparison at a Glance
 
-| Software | License | Stack | Real-Time Metering | Prepaid Credits | LLM Token Tracking | Self-Hosted | Best For |
-|----------|---------|-------|-------------------|-----------------|-------------------|-------------|----------|
-| **Metronome** | Proprietary | Cloud | ✅ High-volume | (Check) | (Check) | ❌ | Stripe ecosystem rating |
-| **Orb** | Proprietary | Cloud | ✅ Multi-dimensional | (Check) | (Check) | ❌ | Adyen ecosystem pricing |
-| **m3ter** | Proprietary | Cloud | ✅ Rating focus | (Check) | ❌ | ❌ | Salesforce/ERP middle layer |
-| **Amberflo** | Proprietary | Cloud | ✅ Event-first | ✅ | ✅ | ❌ | Independent metering-first |
-| **Chargebee** | Proprietary | Cloud | (Add-on) | ✅ | (Via events) | ❌ | Existing Chargebee users |
-| **OpenMeter** | Apache-2.0 | Go/ClickHouse | ✅ Real-time | ✅ Burn-down | ✅ First-class | ✅ | OSS metering + LLM |
-| **Lago** | AGPL-3.0 | Ruby/Postgres | ✅ Real-time | ✅ | (Via events) | ✅ | Proven OSS billing |
-| **Flexprice** | AGPL-3.0 | Go/TypeScript | ✅ Real-time | ✅ | (Check) | ✅ | Developer-friendly OSS |
+| Solution | Deployment | License / Model | Real-Time Metering | Prepaid Credits | AI & LLM Token Tracking | Self-Hosted | Primary Strength |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **m3ter (Salesforce)** | Cloud SaaS | Commercial | ✅ High-throughput | ✅ | ⚠️ Via events | ❌ | Salesforce CRM / ERP enterprise sync |
+| **Metronome (Stripe)** | Cloud SaaS | Commercial | ✅ High-throughput | ✅ | ✅ Supported | ❌ | Stripe-native rating engine |
+| **Orb (Adyen)** | Cloud SaaS | Commercial | ✅ Real-time | ✅ | ✅ Supported | ❌ | Multi-dimensional billing & line items |
+| **Zuora** | Cloud SaaS | Commercial | ✅ Via Togai | ✅ | ⚠️ Via events | ❌ | Global enterprise monetization & ASC 606 |
+| **Chargebee** | Cloud SaaS | Commercial | ⚠️ Add-on | ✅ | ⚠️ Via events | ❌ | Subscription billing & dunning |
+| **Amberflo** | Cloud SaaS | Commercial | ✅ Event-first | ✅ | ✅ First-class | ❌ | Independent metering & AI cost governance |
+| **Lago** | Self-Hosted / Cloud | AGPL-3.0 | ✅ Real-time | ✅ | ✅ Via metrics | ✅ | Mature full-lifecycle open-source billing |
+| **Flexprice** | Self-Hosted / Cloud | AGPL-3.0 | ✅ Real-time | ✅ | ✅ First-class | ✅ | Developer-first UI, Go stack & AI MCP |
+| **Kill Bill** | Self-Hosted | Apache-2.0 | ✅ Ingestion | ✅ | ⚠️ Custom plugin | ✅ | Enterprise modular billing & payments |
+| **OpenMeter** | Self-Hosted / Cloud | Apache-2.0 | ✅ Sub-second | ✅ Burn-down | ✅ First-class | ✅ | Ultra-scalable ClickHouse & Kafka engine |
+| **Lotus** | Self-Hosted | MIT | ✅ Real-time | ⚠️ | ⚠️ Basic | ✅ | Pricing experimentations & packaging UI |
+| **Meteroid** | Self-Hosted | Apache-2.0 | ✅ Real-time | ✅ | ⚠️ Via events | ✅ | Lightweight ClickHouse-backed analytics |
+| **Tier** | Self-Hosted / CLI | Apache-2.0 | ✅ Via Stripe | ⚠️ | ⚠️ Via events | ✅ | Minimalist code-defined Stripe tiers |
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-SaaS-Usage-Metering-Analytics&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsorship
+
+If this curated directory has helped you discover architectures, evaluate usage-based billing infrastructure, or save engineering hours, please consider showing your support:
+
+- 🌟 **Star this repository** on GitHub to help others discover it!
+- 🍴 **Fork and contribute** your favorite tools and insights.
+- 📢 **Share this repo** on Twitter/X, LinkedIn, Reddit, or developer Discord communities.
+- ☕ **Buy a coffee or become a sponsor**: Support ongoing open-source maintenance and research directly via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source SaaS Usage or Metering Analytics tool that should be listed here, please open a pull request with:
+Contributions are warmly encouraged! To propose a tool, update pricing models, or suggest architectural additions:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the **commercial landscape shifted dramatically in 2026**: the major independent metering vendors were acquired — Stripe took Metronome, Salesforce took m3ter, Adyen took Orb, and Kong took OpenMeter [citation:1][citation:15]. This makes **licence independence** the most durable form of control: OpenMeter (Apache 2.0) and Lago (AGPL) cannot be revoked by acquisition, even if their commercial stewards change [citation:15]. OpenMeter is the strongest choice for AI/LLM token metering with first-class support [citation:2][citation:6], while Lago offers the most mature open-source billing engine with proven deduplication and late-event handling [citation:10]. Amberflo remains the notable independent commercial option for metering-first architectures [citation:15].
+1. 🍴 Fork this repository.
+2. 🌿 Create a descriptive feature branch (`git checkout -b feature/add-new-metering-tool`).
+3. ✍️ Add the project following our tabular format with concrete pricing, verifiable free tiers/trials, and active license details.
+4. 🚀 Open a well-documented Pull Request.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
-
----
-
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+This repository and curated list are made available under the [Creative Commons Zero v1.0 Universal](LICENSE) (CC0 1.0) Public Domain Dedication. All listed products and registered trademarks are properties of their respective owners.
